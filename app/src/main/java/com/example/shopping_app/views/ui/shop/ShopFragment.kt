@@ -1,4 +1,4 @@
-package com.example.shopping_app.ui.shop
+package com.example.shopping_app.views.ui.shop
 
 import android.os.Bundle
 import android.os.Handler
@@ -25,7 +25,7 @@ import com.example.shopping_app.databinding.FragmentShopBinding
 import com.example.shopping_app.models.NetworkResponse
 import com.example.shopping_app.models.ProductItem
 import com.example.shopping_app.respository.local.CartRepository
-import com.example.shopping_app.ui.shop.adapter.ShopItemAdapter
+import com.example.shopping_app.views.ui.shop.adapter.ShopItemAdapter
 import com.google.android.material.snackbar.Snackbar
 
 class ShopFragment : Fragment(), ShopItemAdapter.ItemClickCallback {

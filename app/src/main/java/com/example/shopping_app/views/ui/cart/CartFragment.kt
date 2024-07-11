@@ -1,4 +1,4 @@
-package com.example.shopping_app.ui.cart
+package com.example.shopping_app.views.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shopping_app.MyApp
 import com.example.shopping_app.databinding.FragmentCartBinding
 import com.example.shopping_app.models.ProductItem
-import com.example.shopping_app.ui.cart.adapter.CartItemAdapter
+import com.example.shopping_app.views.ui.cart.adapter.CartItemAdapter
 import com.google.android.material.snackbar.Snackbar
 import java.math.RoundingMode
 

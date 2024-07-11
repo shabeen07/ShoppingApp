@@ -22,17 +22,8 @@ class CartRepository(private val cartDao: CartDao) {
         cartDao.clearAll()
     }
 
-    @WorkerThread
-    suspend fun updateNote(productItem: ProductItem) {
-        cartDao.update(productItem)
-    }
-
-    fun getAllNotes(): LiveData<List<ProductItem>> {
+    fun getAllItems(): LiveData<List<ProductItem>> {
         return cartDao.getAllItems()
-    }
-
-    fun getNoteById(itemId: String): LiveData<ProductItem> {
-        return cartDao.getItem(itemId)
     }
 
 }

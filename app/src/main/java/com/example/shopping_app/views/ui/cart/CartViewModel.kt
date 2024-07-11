@@ -1,4 +1,4 @@
-package com.example.shopping_app.ui.cart
+package com.example.shopping_app.views.ui.cart
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +19,7 @@ class CartViewModel(private val cartRepository: CartRepository) : ViewModel() {
 
     private fun getCartItems() {
         viewModelScope.launch {
-            cartRepository.getAllNotes().observeForever {
+            cartRepository.getAllItems().observeForever {
                 _cartItems.value = it
             }
         }

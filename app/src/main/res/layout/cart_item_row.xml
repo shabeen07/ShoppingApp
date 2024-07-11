@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="@string/total"
         android:textStyle="bold"
-        style="@style/TextAppearance.Material3.BodyMedium"/>
+        style="@style/TextAppearance.Material3.TitleMedium"/>
 
 
 </RelativeLayout>
