@@ -42,6 +42,7 @@ class CartFragment : Fragment(), CartItemAdapter.CartClickCallback {
             updateUi(it)
             setCartAdapter(it)
         }
+        // clear cart on checkout
         fragmentCartBinding.btnCheckout.setOnClickListener{
             cartViewModel.clearCart()
             Snackbar.make(requireView(), "Cart Cleared!", Snackbar.LENGTH_SHORT).show()
@@ -69,7 +70,7 @@ class CartFragment : Fragment(), CartItemAdapter.CartClickCallback {
         )
     }
 
-
+    // set cart adapter
     private fun setCartAdapter(productList: List<ProductItem>) {
         val cartItemAdapter = CartItemAdapter(requireContext(), productList, this)
         fragmentCartBinding.rvProducts.adapter = cartItemAdapter
