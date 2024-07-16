@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.flowOn
 object ShopRepository {
 
     fun getProducts() : Flow<NetworkResponse<List<ProductItem>>>  = flow {
-        delay(1000)
         // emit loading
         emit(NetworkResponse.Loading())
         val response = try {

@@ -43,7 +43,7 @@ data class ProductItem(
 	fun getTaxAmount() : BigDecimal{
 		return (sellingPrice?.let {
 			it * (taxPercentage ?: 0.0 ) / 100
-		} ?: 0.0).toBigDecimal().setScale(2,RoundingMode.HALF_UP)
+		} ?: 0.0).toBigDecimal().multiply(BigDecimal(itemQty)).setScale(2,RoundingMode.HALF_UP)
 	}
 
 	// calculate total amount

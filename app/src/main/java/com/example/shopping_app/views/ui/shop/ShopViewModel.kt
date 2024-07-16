@@ -15,6 +15,10 @@ class ShopViewModel : ViewModel() {
     val products: MutableLiveData<NetworkResponse<List<ProductItem>>>
         get() = _products
 
+    init {
+        getProducts()
+    }
+
     // get products
     fun getProducts() {
         viewModelScope.launch {

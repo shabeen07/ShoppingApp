@@ -56,8 +56,6 @@ class ShopFragment : Fragment(), ShopItemAdapter.ItemClickCallback {
         navController = Navigation.findNavController(view)
         // Add options menu to the toolbar
         setupMenu()
-        // load products
-        shopViewModel.getProducts()
         initUi()
         // observe products
         shopViewModel.products.observe(viewLifecycleOwner) {
@@ -138,6 +136,11 @@ class ShopFragment : Fragment(), ShopItemAdapter.ItemClickCallback {
     override fun onAddItemClick(productItem: ProductItem) {
         shopViewModel.insertItem(cartRepository, productItem)
         Snackbar.make(requireView(), "Item Added!", Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        shopViewModel.products.removeObservers(viewLifecycleOwner)
     }
 
 }
